@@ -111,8 +111,8 @@ int xdebug_create_socket(const char *hostname, int dport)
 	}
 
 	/* Put socket in non-blocking mode so we can use select for timeouts */
-	timeout.tv_sec = 0;
-	timeout.tv_usec = 200000;
+	timeout.tv_sec = 1;
+	timeout.tv_usec = 0;
 
 #ifdef WIN32
 	ioctlsocket(sockfd, FIONBIO, (u_long*)&yes);
